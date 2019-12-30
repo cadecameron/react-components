@@ -39,7 +39,7 @@ class GroceryListItem extends React.Component {
   render() {
 
     var style = {
-      font: this.state.hover ? `bold` : `none`,
+      fontWeight: this.state.hover ? 'bold' : 'normal'
     };
 
     return (
