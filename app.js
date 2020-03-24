@@ -18,18 +18,21 @@ class GroceryListItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hover: false
+      hover: false,
+      done: false
     };
   }
 
-  // onListItemClick () {
-  //   this.setState({
-  //     done: !this.state.done
-  //   });
-  // }
+  onListItemClick () {
+    console.log('Done action triggered!');
+    this.setState({
+      done: !this.state.done
+    });
+    console.log('Done is:', this.state.done);
+  }
 
   onListItemHover() {
-    console.log('Hover acction triggered!');
+    console.log('Hover action triggered!');
     this.setState({
       hover: !this.state.hover,
     });
@@ -39,11 +42,12 @@ class GroceryListItem extends React.Component {
   render() {
 
     var style = {
-      fontWeight: this.state.hover ? 'bold' : 'normal'
+      fontWeight: this.state.hover ? 'bold' : 'normal',
+      textDecorationLine: this.state.done ? 'line-through' : 'none'
     };
 
     return (
-      <li style={style} onMouseEnter={this.onListItemHover.bind(this)} onMouseLeave={this.onListItemHover.bind(this)}>{this.props.item}</li>
+      <li style={style} onClick={this.onListItemClick.bind(this)} onMouseEnter={this.onListItemHover.bind(this)} onMouseLeave={this.onListItemHover.bind(this)}>{this.props.item}</li>
     );
   }
 };
