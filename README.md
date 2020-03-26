@@ -1,6 +1,7 @@
 # react-components
 This is a project I completed as a student at [hackreactor](http://hackreactor.com). This project was worked on with a pair.
 
+## High Level Goals of this Sprint
 - Learn how to create React components
 - Learn how to render React components
 - Learn how to use JSX and ES6 in React code
